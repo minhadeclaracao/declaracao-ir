@@ -26,7 +26,7 @@
       background: white;
       border-radius: 28px;
       box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
-      max-width: 460px;
+      max-width: 480px;
       width: 100%;
       padding: 50px 35px;
       text-align: center;
@@ -47,8 +47,9 @@
     h1 {
       font-size: 28px;
       color: #0a1e2b;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       font-weight: 700;
+      line-height: 1.3;
     }
 
     p {
@@ -116,25 +117,87 @@
       color: #94a3b8;
       margin-top: 20px;
     }
+
+    .redirect-box {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0 30px 0;
+    }
+
+    .countdown {
+      font-size: 16px;
+      color: #0a1e2b;
+      margin-bottom: 8px;
+    }
+
+    .countdown span {
+      font-weight: 700;
+      color: #c9a84c;
+    }
+
+    .manual-link {
+      font-size: 14px;
+      color: #475569;
+    }
+
+    .manual-link a {
+      color: #c9a84c;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .manual-link a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="check-icon">✓</div>
-    <h1>Recebemos seu cadastro!</h1>
-    <p>Obrigado por confiar em nosso serviço. Em breve um especialista entrará em contato para agendar sua <strong>consultoria gratuita</strong>.</p>
+    <h1>Que bom ter você conosco! 😊</h1>
+    <p>Sua solicitação de <strong>consultoria gratuita para o IR</strong> foi recebida com sucesso. Um especialista vai analisar seu caso e entrar em contato em breve.</p>
 
     <div class="next-steps">
-      <h2>📌 O que acontece agora?</h2>
+      <h2>📌 O que esperar agora?</h2>
       <ul>
-        <li><span>📧</span> Fique de olho no seu e‑mail (caixa de entrada e spam).</li>
-        <li><span>📞</span> Nossa equipe vai enviar as orientações em até 24 horas.</li>
-        <li><span>📋</span> Tenha em mãos seus documentos fiscais para a consultoria.</li>
+        <li><span>📧</span> Em alguns minutos você receberá um e‑mail de confirmação – dê uma olhadinha no spam se não aparecer.</li>
+        <li><span>📞</span> Em até 24 horas úteis, um consultor vai chamar você para agendar um bate‑papo sem compromisso.</li>
+        <li><span>📋</span> Tenha em mãos seus informes de rendimentos, recibos e extratos – isso ajuda a adiantar a análise.</li>
       </ul>
     </div>
 
-    <a href="https://minhadeclaracao.github.io/declaracao-ir/" class="button">Voltar para o site</a>
+    <div class="redirect-box">
+      <div class="countdown">⏳ Você será redirecionado em <span id="segundos">5</span> segundos...</div>
+      <div class="manual-link">
+        Se o redirecionamento não acontecer, <a href="#" id="linkDestino">clique aqui</a>.
+      </div>
+    </div>
+
+    <a href="#" id="linkDestinoBtn" class="button">Falar com a gente pelo WhatsApp</a>
     <p class="footer-note">🔒 Seus dados estão protegidos. Não compartilhamos com terceiros.</p>
   </div>
+
+  <script>
+    // 🎯 DESTINO APÓS O CADASTRO (troque pela sua URL)
+    const SITE_DESTINO = "https://wa.me/55SEUNUMERO?text=Olá!%20Acabei%20de%20me%20cadastrar%20para%20a%20consultoria%20gratuita%20de%20IR%20e%20gostaria%20de%20saber%20mais.";
+
+    // Atualiza os links manuais
+    document.getElementById('linkDestino').href = SITE_DESTINO;
+    document.getElementById('linkDestinoBtn').href = SITE_DESTINO;
+
+    // Contador regressivo
+    let tempoRestante = 5;
+    const spanSegundos = document.getElementById('segundos');
+    const intervalo = setInterval(() => {
+      tempoRestante--;
+      spanSegundos.textContent = tempoRestante;
+
+      if (tempoRestante <= 0) {
+        clearInterval(intervalo);
+        window.location.href = SITE_DESTINO;
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
