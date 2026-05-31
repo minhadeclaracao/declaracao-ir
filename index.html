@@ -3,125 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Declaração de Imposto de Renda | Assessoria Contábil</title>
+  <title>Declaração de IR | Consultoria Gratuita</title>
+  <!-- Fonte moderna Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #4a0e1b 0%, #7b1a2b 100%);
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a1f2b 0%, #123b4a 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
+
     .card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      max-width: 450px;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+      max-width: 440px;
       width: 100%;
-      padding: 40px 30px;
+      padding: 44px 32px;
       text-align: center;
+      transition: transform 0.2s;
     }
+
     .icon {
-      font-size: 50px;
-      margin-bottom: 15px;
+      font-size: 52px;
+      margin-bottom: 12px;
     }
+
     h1 {
       font-size: 26px;
-      color: #1a2a3a;
-      margin-bottom: 12px;
+      font-weight: 700;
+      color: #0a1e2b;
+      margin-bottom: 10px;
       line-height: 1.3;
     }
+
     .subtitle {
-      color: #2d3748;
+      color: #475569;
       font-size: 16px;
-      margin-bottom: 30px;
-      line-height: 1.5;
+      margin-bottom: 34px;
+      line-height: 1.6;
     }
+
     .input-group {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       text-align: left;
     }
+
     label {
-      font-size: 14px;
-      color: #1a202c;
+      font-size: 13px;
       font-weight: 600;
+      color: #1e293b;
       display: block;
       margin-bottom: 6px;
+      letter-spacing: 0.3px;
     }
+
     input {
       width: 100%;
-      padding: 14px 16px;
-      border: 1px solid #cbd5e0;
-      border-radius: 12px;
+      padding: 15px 18px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
       font-size: 16px;
-      transition: 0.3s;
-      background: rgba(255,255,255,0.9);
-    }
-    input:focus {
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s ease;
+      background: #f8fafc;
       outline: none;
-      border-color: #e67e22;
-      box-shadow: 0 0 0 3px rgba(230,126,34,0.2);
     }
+
+    input:focus {
+      border-color: #c9a84c;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+    }
+
     button {
-      background: #e67e22;
-      color: white;
+      background: #c9a84c;
+      color: #0a1f2b;
       border: none;
-      padding: 16px;
+      padding: 17px;
       width: 100%;
-      border-radius: 12px;
+      border-radius: 16px;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
       cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.3s;
+      margin-top: 6px;
+      transition: all 0.25s;
+      letter-spacing: 0.4px;
     }
+
     button:hover {
-      background: #d35400;
+      background: #b8952f;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(201, 168, 76, 0.5);
     }
+
     .privacy {
       font-size: 12px;
-      color: #4a5568;
-      margin-top: 18px;
+      color: #94a3b8;
+      margin-top: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
+
+    .privacy span {
+      font-size: 15px;
+    }
+
     .privacy a {
-      color: #e67e22;
+      color: #c9a84c;
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    .privacy a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="icon">📊</div>
-    <h1>Declaração de Imposto de Renda sem complicação</h1>
+    <div class="icon">📑</div>
+    <h1>Declaração de IR sem estresse</h1>
     <p class="subtitle">
-      Deixe sua declaração com quem entende. Preencha abaixo e receba uma
-      <strong>consultoria gratuita</strong> para pagar menos imposto (ou restituir mais).
+      Receba uma <strong>consultoria gratuita</strong> com especialistas e descubra como pagar menos imposto (ou aumentar sua restituição).
     </p>
 
+    <!-- Formulário conectado ao seu Formspree -->
     <form action="https://formspree.io/f/mlgvydol" method="POST">
       <div class="input-group">
-        <label for="nome">Nome completo</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <label>Nome completo</label>
+        <input type="text" name="nome" placeholder="Ex: João Silva" required>
       </div>
       <div class="input-group">
-        <label for="email">E‑mail</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        <label>Melhor e-mail</label>
+        <input type="email" name="email" placeholder="joao@email.com" required>
       </div>
-      <button type="submit">Quero declarar sem dor de cabeça</button>
+      <button type="submit">Quero minha consultoria gratuita</button>
     </form>
 
-    <p class="privacy">
-      Seus dados estão seguros. Consulte nossa
-      <a href="#">Política de Privacidade</a>.
-    </p>
+    <div class="privacy">
+      <span>🔒</span> Seus dados estão seguros. <a href="#">Política de Privacidade</a>
+    </div>
   </div>
 </body>
 </html>
