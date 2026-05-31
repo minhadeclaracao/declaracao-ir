@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Declaração de Imposto de Renda | Assessoria Contábil</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      max-width: 450px;
+      width: 100%;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .icon {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 26px;
+      color: #1a2a3a;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      color: #4a5568;
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    .input-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+    label {
+      font-size: 14px;
+      color: #2d3748;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #cbd5e0;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: 0.3s;
+      background: #f7fafc;
+    }
+    input:focus {
+      outline: none;
+      border-color: #2b6cb0;
+      box-shadow: 0 0 0 3px rgba(43,108,176,0.2);
+    }
+    button {
+      background: #2b6cb0;
+      color: white;
+      border: none;
+      padding: 16px;
+      width: 100%;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #1e4e8c;
+    }
+    .privacy {
+      font-size: 12px;
+      color: #a0aec0;
+      margin-top: 18px;
+    }
+    .privacy a {
+      color: #2b6cb0;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">📊</div>
+    <h1>Declaração de Imposto de Renda sem complicação</h1>
+    <p class="subtitle">
+      Deixe sua declaração com quem entende. Preencha abaixo e receba uma
+      <strong>consultoria gratuita</strong> para pagar menos imposto (ou restituir mais).
+    </p>
+
+    <!-- ⚠️ Troque o link abaixo pelo do seu serviço de email -->
+    <form action="https://formspree.io/f/seu-id-aqui" method="POST">
+      <div class="input-group">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+      </div>
+      <div class="input-group">
+        <label for="email">E‑mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+      </div>
+      <button type="submit">Quero declarar sem dor de cabeça</button>
+    </form>
+
+    <p class="privacy">
+      Seus dados estão seguros. Consulte nossa
+      <a href="#">Política de Privacidade</a>.
+    </p>
+  </div>
+</body>
+</html>
