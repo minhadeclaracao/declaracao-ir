@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Declaração de IR | Consultoria Gratuita</title>
-  <!-- Fonte moderna Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -31,7 +30,6 @@
       width: 100%;
       padding: 44px 32px;
       text-align: center;
-      transition: transform 0.2s;
     }
 
     .icon {
@@ -131,6 +129,11 @@
     .privacy a:hover {
       text-decoration: underline;
     }
+
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
@@ -141,8 +144,8 @@
       Receba uma <strong>consultoria gratuita</strong> com especialistas e descubra como pagar menos imposto (ou aumentar sua restituição).
     </p>
 
-    <!-- Formulário conectado ao seu Formspree -->
-    <form action="https://formspree.io/f/mlgvydol" method="POST">
+    <!-- Formulário com redirecionamento via JavaScript -->
+    <form id="form-captura">
       <div class="input-group">
         <label>Nome completo</label>
         <input type="text" name="nome" placeholder="Ex: João Silva" required>
@@ -151,12 +154,56 @@
         <label>Melhor e-mail</label>
         <input type="email" name="email" placeholder="joao@email.com" required>
       </div>
-      <button type="submit">Quero minha consultoria gratuita</button>
+      <button type="submit" id="submit-btn">Quero minha consultoria gratuita</button>
     </form>
 
     <div class="privacy">
       <span>🔒</span> Seus dados estão seguros. <a href="#">Política de Privacidade</a>
     </div>
   </div>
+
+  <!-- Script de envio + redirecionamento -->
+  <script>
+    const form = document.getElementById('form-captura');
+    const button = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // impede o envio padrão
+
+      // Desabilitar botão para evitar duplo envio
+      button.classList.add('loading');
+      button.textContent = 'Enviando...';
+
+      const formData = new FormData(form);
+      const data = {
+        nome: formData.get('nome'),
+        email: formData.get('email')
+      };
+
+      try {
+        const response = await fetch('https://formspree.io/f/mlgvydol', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          // Redireciona para a página de obrigado
+          window.location.href = 'https://minhadeclaracao.github.io/declaracao-ir/obrigado.html';
+        } else {
+          alert('Ocorreu um erro. Por favor, tente novamente.');
+          button.classList.remove('loading');
+          button.textContent = 'Quero minha consultoria gratuita';
+        }
+      } catch (error) {
+        alert('Erro de conexão. Verifique sua internet e tente novamente.');
+        button.classList.remove('loading');
+        button.textContent = 'Quero minha consultoria gratuita';
+      }
+    });
+  </script>
 </body>
 </html>
