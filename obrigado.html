@@ -168,25 +168,25 @@
     </div>
 
     <div class="redirect-box">
-      <div class="countdown">⏳ Você será redirecionado em <span id="segundos">5</span> segundos...</div>
+      <div class="countdown">⏳ Você será redirecionado para a <strong>Hotmart</strong> em <span id="segundos">5</span> segundos...</div>
       <div class="manual-link">
-        Se o redirecionamento não acontecer, <a href="#" id="linkDestino">clique aqui</a>.
+        Se o redirecionamento não acontecer, <a href="#" id="linkDestino">clique aqui para acessar a oferta especial</a>.
       </div>
     </div>
 
-    <a href="#" id="linkDestinoBtn" class="button">Falar com a gente pelo WhatsApp</a>
+    <a href="#" id="linkDestinoBtn" class="button">Quero garantir minha vaga na Hotmart</a>
     <p class="footer-note">🔒 Seus dados estão protegidos. Não compartilhamos com terceiros.</p>
   </div>
 
   <script>
-    // 🎯 DESTINO APÓS O CADASTRO (troque pela sua URL)
-    const SITE_DESTINO = "https://wa.me/55SEUNUMERO?text=Olá!%20Acabei%20de%20me%20cadastrar%20para%20a%20consultoria%20gratuita%20de%20IR%20e%20gostaria%20de%20saber%20mais.";
+    // 🎯 LINK DA SUA OFERTA NA HOTMART (TROQUE AQUI)
+    const SITE_DESTINO = "https://www.hotmart.com/seu-produto-ou-cupom";
 
     // Atualiza os links manuais
     document.getElementById('linkDestino').href = SITE_DESTINO;
     document.getElementById('linkDestinoBtn').href = SITE_DESTINO;
 
-    // Contador regressivo
+    // Contador regressivo e redirecionamento
     let tempoRestante = 5;
     const spanSegundos = document.getElementById('segundos');
     const intervalo = setInterval(() => {
