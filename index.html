@@ -13,7 +13,7 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: url('https://github.com/minhadeclaracao/declaracao-ir/blob/main/gpt-image-1.5_A_photorealistic_top-down_flat_lay_of_a_clean_accountant_s_desk._The_scene_inclu-0.jpg?raw=true') no-repeat center center fixed;
-background-size: cover;
+      background-size: cover;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -21,7 +21,8 @@ background-size: cover;
       padding: 20px;
     }
     .card {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.85); /* fundo branco semi-transparente */
+      backdrop-filter: blur(8px); /* desfoque do fundo atrás do cartão */
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       max-width: 450px;
@@ -40,7 +41,7 @@ background-size: cover;
       line-height: 1.3;
     }
     .subtitle {
-      color: #4a5568;
+      color: #2d3748;
       font-size: 16px;
       margin-bottom: 30px;
       line-height: 1.5;
@@ -51,7 +52,7 @@ background-size: cover;
     }
     label {
       font-size: 14px;
-      color: #2d3748;
+      color: #1a202c;
       font-weight: 600;
       display: block;
       margin-bottom: 6px;
@@ -63,15 +64,15 @@ background-size: cover;
       border-radius: 12px;
       font-size: 16px;
       transition: 0.3s;
-      background: #f7fafc;
+      background: rgba(255,255,255,0.9);
     }
     input:focus {
       outline: none;
-      border-color: #2b6cb0;
-      box-shadow: 0 0 0 3px rgba(43,108,176,0.2);
+      border-color: #e67e22;
+      box-shadow: 0 0 0 3px rgba(230,126,34,0.2);
     }
     button {
-      background: #2b6cb0;
+      background: #e67e22;
       color: white;
       border: none;
       padding: 16px;
@@ -84,15 +85,15 @@ background-size: cover;
       transition: background 0.3s;
     }
     button:hover {
-      background: #1e4e8c;
+      background: #d35400;
     }
     .privacy {
       font-size: 12px;
-      color: #a0aec0;
+      color: #4a5568;
       margin-top: 18px;
     }
     .privacy a {
-      color: #2b6cb0;
+      color: #e67e22;
       text-decoration: none;
     }
   </style>
@@ -106,8 +107,8 @@ background-size: cover;
       <strong>consultoria gratuita</strong> para pagar menos imposto (ou restituir mais).
     </p>
 
-    <!-- ⚠️ Troque o link abaixo pelo do seu serviço de email -->
-    <<form action="https://formspree.io/f/mlgvydol" method="POST">>
+    <!-- Formulário conectado ao Formspree -->
+    <form action="https://formspree.io/f/mlgvydol" method="POST">
       <div class="input-group">
         <label for="nome">Nome completo</label>
         <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
