@@ -91,64 +91,10 @@
       font-size: 18px;
     }
 
-    .button {
-      background: #c9a84c;
-      color: #0a1f2b;
-      border: none;
-      padding: 16px 30px;
-      border-radius: 16px;
-      font-size: 16px;
-      font-weight: 700;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.25s;
-    }
-
-    .button:hover {
-      background: #b8952f;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(201, 168, 76, 0.5);
-    }
-
     .footer-note {
       font-size: 13px;
       color: #94a3b8;
       margin-top: 20px;
-    }
-
-    .redirect-box {
-      background: #f8fafc;
-      border-radius: 16px;
-      padding: 20px;
-      margin: 20px 0 30px 0;
-    }
-
-    .countdown {
-      font-size: 16px;
-      color: #0a1e2b;
-      margin-bottom: 8px;
-    }
-
-    .countdown span {
-      font-weight: 700;
-      color: #c9a84c;
-    }
-
-    .manual-link {
-      font-size: 14px;
-      color: #475569;
-    }
-
-    .manual-link a {
-      color: #c9a84c;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .manual-link a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -167,33 +113,18 @@
       </ul>
     </div>
 
-    <div class="redirect-box">
-      <div class="countdown">⏳ Você será redirecionado para a <strong>Hotmart</strong> em <span id="segundos">5</span> segundos...</div>
-      <div class="manual-link">
-        Se o redirecionamento não acontecer, <a href="https://www.hotmart.com" target="_blank">clique aqui para acessar a oferta especial</a>.
-      </div>
-    </div>
-
-    <a href="https://www.hotmart.com" target="_blank" class="button">Quero garantir minha vaga na Hotmart</a>
     <p class="footer-note">🔒 Seus dados estão protegidos. Não compartilhamos com terceiros.</p>
   </div>
 
+  <!-- Redirecionamento silencioso após 5 segundos -->
   <script>
-    // 🎯 URL DE DESTINO PARA TESTE (PÁGINA INICIAL DA HOTMART)
+    // 🎯 Destino do redirecionamento (troque pela sua URL da Hotmart)
     const SITE_DESTINO = "https://www.hotmart.com";
 
-    // Contador regressivo e redirecionamento automático
-    let tempoRestante = 5;
-    const spanSegundos = document.getElementById('segundos');
-    const intervalo = setInterval(() => {
-      tempoRestante--;
-      spanSegundos.textContent = tempoRestante;
-
-      if (tempoRestante <= 0) {
-        clearInterval(intervalo);
-        window.location.href = SITE_DESTINO;
-      }
-    }, 1000);
+    // Aguarda 5 segundos e redireciona sem exibir nada
+    setTimeout(() => {
+      window.location.href = SITE_DESTINO;
+    }, 5000); // 5000 milissegundos = 5 segundos
   </script>
 </body>
 </html>
