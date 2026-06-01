@@ -170,23 +170,19 @@
     <div class="redirect-box">
       <div class="countdown">⏳ Você será redirecionado para a <strong>Hotmart</strong> em <span id="segundos">5</span> segundos...</div>
       <div class="manual-link">
-        Se o redirecionamento não acontecer, <a href="#" id="linkDestino">clique aqui para acessar a oferta especial</a>.
+        Se o redirecionamento não acontecer, <a href="https://www.hotmart.com" target="_blank">clique aqui para acessar a oferta especial</a>.
       </div>
     </div>
 
-    <a href="#" id="linkDestinoBtn" class="button">Quero garantir minha vaga na Hotmart</a>
+    <a href="https://www.hotmart.com" target="_blank" class="button">Quero garantir minha vaga na Hotmart</a>
     <p class="footer-note">🔒 Seus dados estão protegidos. Não compartilhamos com terceiros.</p>
   </div>
 
   <script>
-    // 🎯 LINK DA SUA OFERTA NA HOTMART (TROQUE AQUI)
-    const SITE_DESTINO = "https://www.hotmart.com/seu-produto-ou-cupom";
+    // 🎯 URL DE DESTINO PARA TESTE (PÁGINA INICIAL DA HOTMART)
+    const SITE_DESTINO = "https://www.hotmart.com";
 
-    // Atualiza os links manuais
-    document.getElementById('linkDestino').href = SITE_DESTINO;
-    document.getElementById('linkDestinoBtn').href = SITE_DESTINO;
-
-    // Contador regressivo e redirecionamento
+    // Contador regressivo e redirecionamento automático
     let tempoRestante = 5;
     const spanSegundos = document.getElementById('segundos');
     const intervalo = setInterval(() => {
